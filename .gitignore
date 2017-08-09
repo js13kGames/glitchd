@@ -1,0 +1,13 @@
+# Generic
+server.key
+*.log
+*.db
+*.db.lock
+
+# IDE-specific dirs
+.idea/
+
+# JS
+node_modules/
+# Unlock once glitchd is out of unstable dev.
+yarn.lock

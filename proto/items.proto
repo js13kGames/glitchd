@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package glitchd.items;
+
+option go_package = "github.com/js13kgames/glitchd/server/services/items/grpc";
+
+message Empty {}
+
+service Store {
+    rpc Get (StoreGetRequest) returns (StoreGetResponse) {}
+    rpc Put (StorePutRequest) returns (Empty) {}
+    rpc Delete (StoreDeleteRequest) returns (Empty) {}
+}
+
+message StoreGetRequest {
+    string key = 1;
+}
+
+message StoreGetResponse {
+    bytes value = 1;
+}
+
+message StorePutRequest {
+    string key = 1;
+    bytes value = 2;
+}
+
+message StoreDeleteRequest {
+    string key = 1;
+}
